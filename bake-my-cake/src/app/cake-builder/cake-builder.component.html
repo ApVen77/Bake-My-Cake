@@ -1,0 +1,36 @@
+<!-- cake-builder.component.html -->
+
+<div class="order-form">
+    <h2>Build Your Own Cake</h2>
+
+    <div>
+        <label for="cakeBase">Select Cake Base:</label>
+        <select id="cakeBase" [(ngModel)]="selectedCakeBase">
+            <option value="vanilla">Vanilla</option>
+            <option value="chocolate">Chocolate</option>
+            <option value="maple">Maple</option>
+            <option value="Birthday-cake">Birthday-Cake</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+
+    <div>
+        <h3>Select Toppings:</h3>
+        <div *ngFor="let topping of toppings">
+            <label>
+                <input type="checkbox" [(ngModel)]="selectedToppings[topping]" />
+                {{ topping }}
+            </label>
+        </div>
+    </div>
+
+    <!-- <h3>Select Frosting:</h3>
+    <div *ngFor="let frosting of frostings">
+        <label>
+            <input type="checkbox" [(ngModel)]="selectedToppings[frosting]" />
+            {{ frostingsS }}
+        </label>
+    </div>
+</div> -->
+    <button (click)="submitCake()">Submit Cake</button>
+</div>
